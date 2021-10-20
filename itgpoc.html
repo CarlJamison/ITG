@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>ITG</title>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+.nav-tab{
+    letter-spacing: 0.6px;
+    padding: 16px;
+    color: #007db0;
+    border-bottom: #8080804f 1px solid;
+}
+
+.nav-tab .material-icons{
+    vertical-align: bottom;
+    padding-right: 10px;
+    height: 22px;
+}
+
+.nav-tab:hover{
+    background-color: #007db012;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.widget{
+    background-color: #007db0;
+    margin: 50px auto;
+    width: 80%;
+    padding: 16px;
+    border-radius: 2px;
+    color: white;
+    box-shadow: #3232324a 0px 3px 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    letter-spacing: 0.6px;
+    max-width:730px
+}
+
+.widget-search-filter{
+    margin: 8px 16px;
+}
+
+.widget-search-filter input{
+    font-size: 16px;
+    padding: 8px;
+    color:#007db0;
+    border: 0;
+    border-radius: 1px;
+    margin-top: 4px;
+}
+.widget-search-filter button,
+.itineraries a,
+.itineraries .EditItinerary{
+    margin-top: 19px;
+    height: 36px;
+    color: #007db0;
+    background-color: #ffd389;
+    border: 0;
+    flex-grow: 1;
+    width: 210px;
+    border-radius: 2px;
+    font-size: 16px;
+}
+.widget-search-filter button:hover,
+.itineraries a.Button:hover,
+.itineraries .EditItinerary:hover{
+    background-color: #dcb778;
+    cursor: pointer;
+    transition: all 0.25s;;
+}
+.itineraries a.Button{
+    text-transform: uppercase;
+    margin-top: 0 !important;
+    text-decoration: none;
+    padding: 8px;
+    width: unset;
+    height: unset;
+    font-weight: normal
+}
+
+.itineraries .EditItinerary{ 
+    text-transform: uppercase;
+    padding: 8px;
+    width: unset;
+    height: unset;
+    margin: 8px;
+}
+.itineraries .Gadget{
+    margin: auto;
+    max-width: 80%;
+    background-color: white;
+    border: 2px solid #007db0;
+    border-radius: 8px;
+    padding: 0px 16px 16px 16px;
+    margin-bottom: 32px;
+    color: #007db0;
+    box-shadow: #3232324a 0px 3px 8px;
+    letter-spacing: 0.6px;
+}
+.itineraries img{
+    display: none;
+}
+.itineraries .Prices{
+    
+    width: 40%;
+    border-right: 1px #007db0 solid;
+}
+.itineraries .Trips{
+    
+    padding-left: 8px;
+}
+.itineraries td{
+    
+    padding-left: 8px;
+}
+.itineraries .TripSeparator{
+    
+    border-bottom: 1px #007db0 solid;
+}
+.itineraries hr{
+    display: none;
+}
+</style>
+<body style="margin: 0; background-color: #afafaa57;; height: 100%;
+    display: flex; flex-direction: column;"></body>
+
+<div style="background-color: #007db0; color: white;
+            font-size: 24px; letter-spacing: 1.25px;
+            padding: 20px; box-shadow: #323232 0 0 8px;">
+    <span>ITG Travel</span>
+</div>
+<div style="flex-grow: 1; display: flex; flex-direction: row;">
+    <div style="width: 300px; background-color: white; 
+    min-width: 300px;
+    border-right: #8080804f 1px solid;">
+        <div class="nav-tab"><span class="material-icons">airplane_ticket</span>Flights</div>
+        <div class="nav-tab"><span class="material-icons">book</span>My Bookings</div>
+        <div class="nav-tab"><span class="material-icons">info</span>Policies</div>
+        <div class="nav-tab"><span class="material-icons">contact_support</span>Contact Us</div>
+        <div class="nav-tab"><span class="material-icons">airplane_ticket</span>Sign Up</div>
+    </div>
+
+    <div style="flex-grow: 1">
+        <div class="widget">
+            <div class="widget-search-filter">
+                <label for="from">From</label><br>
+                <input type="text" id="from" value="MSP">
+            </div>
+            <div class="widget-search-filter">
+                <label for="from">To</label><br>
+                <input type="text" id="To" value="DEN">
+            </div>
+            <div class="widget-search-filter">
+                <label for="from">Number of passengers</label><br>
+                <input type="text" id="from" name="from" value="2">
+            </div>
+            <div class="widget-search-filter">
+                <label for="from">Depart</label><br>
+                <input type="text" id="from" name="from" value="11/19/2021">
+            </div>
+            <div class="widget-search-filter">
+                <label for="from">Return</label><br>
+                <input type="text" id="from" name="from" value="11/30/2021">
+            </div>
+            <div class="widget-search-filter">
+                <button type="button" id="from" name="from" value="Search">SEARCH</button>
+            </div>
+        </div>
+
+        <div class="itineraries">
+            <div class="Gadget" triptype="HUMFARE" stops="0" outdeptime="1935" outarrtime="2100" retdeptime="1531" retarrtime="1840">
+                <a name="Itinerary0"></a>
+                <h1 class="Title Humanitarian">
+                    <a class="Button" href="https://booking.itgtravel.net/splash.php?location=itineraries.php%3Fid%3D0" style="float:right;margin-top:9px;margin-right:10px;">confirm</a>
+                    Humanitarian Fare: $149.00 
+                    Cash					<span style="font-size:10px;text-transform:none">(including T&amp;F)</span>
+                </h1>
+                <div class="Content Short" id="Short0">
+                    <div class="Itinerary">
+                        <table class="ItinTable" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Prices" valign="top">
+                                    <div class="Totals">
+                                        <img src="/images/itin/cc.gif" width="26" height="16" alt="Credit Card" border="0">
+                                        <span style="vertical-align:3px">Credit Card Price</span><br/>
+                                        <b>Total $155.00</b>
+                                    </div>
+                                    <div class="PassengerFare"><span class='Left'>Per Adult:</span><span class="Right">
+                                        $155.00					</span>
+                                    </div>
+                                    <div class="HighlightCashDisc"><span class='Left'>Cash Disc:</span><span class="Right">- $6.00</span></div>
+                                    <div class="EditItinerary">
+                                        <a style="text-decoration:none;" href="https://booking.itgtravel.net/splash.php?location=itinerary_builder.php%3Fid%3D0%26action%3Dmodify">
+                                            <div style="text-align: center;text-decoration:none;" class="Button">Edit Itinerary</div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="Trips" valign="top">
+                                    <table class="LastTrip" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/F9.gif" width="16" height="16" alt="F9 - Frontier Airlines" title="F9 - Frontier Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">F9 459</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >7:35pm</td>
+                                            <td class="Airport ">MSP</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">DEN</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >9:00pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TripSeparator" colspan="12">
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/F9.gif" width="16" height="16" alt="F9 - Frontier Airlines" title="F9 - Frontier Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">F9 458</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >3:31pm</td>
+                                            <td class="Airport ">DEN</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">MSP</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >6:40pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="Content Full" id="Full0"></div>
+                <div class="Toggle" onclick="toggleItinerary(this,0)">+ view complete summary</div>
+            </div>
+            <div class="Gadget" triptype="PUBFARE" stops="0" outdeptime="1935" outarrtime="2100" retdeptime="1531" retarrtime="1840">
+                <a name="Itinerary1"></a>
+                <h1 class="Title Published">
+                    <a class="Button" href="https://booking.itgtravel.net/splash.php?location=itineraries.php%3Fid%3D1" style="float:right;margin-top:9px;margin-right:10px;">confirm</a>
+                    Published Fare: $169.96 
+                    <span style="font-size:10px;text-transform:none">(including T&amp;F)</span>
+                </h1>
+                <div class="Content Short" id="Short1">
+                    <div class="Itinerary">
+                        <table class="ItinTable" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Prices" valign="top">
+                                    <div class="PassengerFare"><span class='Left'>Per Adult:</span><span class="Right">
+                                        $157.96					</span>
+                                    </div>
+                                    <div class="Fee"><span class='Left'>TSF:</span><span class="Right">$12.00</span></div>
+                                    <div class="EditItinerary">
+                                        <a style="text-decoration:none;" href="https://booking.itgtravel.net/splash.php?location=itinerary_builder.php%3Fid%3D1%26action%3Dmodify">
+                                            <div style="text-align: center;text-decoration:none;" class="Button">Edit Itinerary</div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="Trips" valign="top">
+                                    <table class="LastTrip" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/F9.gif" width="16" height="16" alt="F9 - Frontier Airlines" title="F9 - Frontier Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">F9 459</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >7:35pm</td>
+                                            <td class="Airport ">MSP</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">DEN</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >9:00pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TripSeparator" colspan="12">
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/F9.gif" width="16" height="16" alt="F9 - Frontier Airlines" title="F9 - Frontier Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">F9 458</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >3:31pm</td>
+                                            <td class="Airport ">DEN</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">MSP</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >6:40pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="Content Full" id="Full1"></div>
+                <div class="Toggle" onclick="toggleItinerary(this,1)">+ view complete summary</div>
+            </div>
+            <div class="Gadget" triptype="PUBFARE" stops="0" outdeptime="1725" outarrtime="1841" retdeptime="1730" retarrtime="2027">
+                <a name="Itinerary2"></a>
+                <h1 class="Title Published">
+                    <a class="Button" href="https://booking.itgtravel.net/splash.php?location=itineraries.php%3Fid%3D2" style="float:right;margin-top:9px;margin-right:10px;">confirm</a>
+                    Published Fare: $186.81 
+                    <span style="font-size:10px;text-transform:none">(including T&amp;F)</span>
+                </h1>
+                <div class="Content Short" id="Short2">
+                    <div class="Itinerary">
+                        <table class="ItinTable" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Prices" valign="top">
+                                    <div class="PassengerFare"><span class='Left'>Per Adult:</span><span class="Right">
+                                        $174.81					</span>
+                                    </div>
+                                    <div class="Fee"><span class='Left'>TSF:</span><span class="Right">$12.00</span></div>
+                                    <div class="EditItinerary">
+                                        <a style="text-decoration:none;" href="https://booking.itgtravel.net/splash.php?location=itinerary_builder.php%3Fid%3D2%26action%3Dmodify">
+                                            <div style="text-align: center;text-decoration:none;" class="Button">Edit Itinerary</div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="Trips" valign="top">
+                                    <table class="LastTrip" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/UA.gif" width="16" height="16" alt="UA - United Airlines" title="UA - United Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">UA 2272</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >5:25pm</td>
+                                            <td class="Airport ">MSP</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">DEN</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >6:41pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TripSeparator" colspan="12">
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/UA.gif" width="16" height="16" alt="UA - United Airlines" title="UA - United Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">UA 2679</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >5:30pm</td>
+                                            <td class="Airport ">DEN</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">MSP</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >8:27pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="Content Full" id="Full2"></div>
+                <div class="Toggle" onclick="toggleItinerary(this,2)">+ view complete summary</div>
+            </div>
+            <div class="Gadget" triptype="PUBFARE" stops="0" outdeptime="0900" outarrtime="1019" retdeptime="1730" retarrtime="2027">
+                <a name="Itinerary3"></a>
+                <h1 class="Title Published">
+                    <a class="Button" href="https://booking.itgtravel.net/splash.php?location=itineraries.php%3Fid%3D3" style="float:right;margin-top:9px;margin-right:10px;">confirm</a>
+                    Published Fare: $186.81 
+                    <span style="font-size:10px;text-transform:none">(including T&amp;F)</span>
+                </h1>
+                <div class="Content Short" id="Short3">
+                    <div class="Itinerary">
+                        <table class="ItinTable" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Prices" valign="top">
+                                    <div class="PassengerFare"><span class='Left'>Per Adult:</span><span class="Right">
+                                        $174.81					</span>
+                                    </div>
+                                    <div class="Fee"><span class='Left'>TSF:</span><span class="Right">$12.00</span></div>
+                                    <div class="EditItinerary">
+                                        <a style="text-decoration:none;" href="https://booking.itgtravel.net/splash.php?location=itinerary_builder.php%3Fid%3D3%26action%3Dmodify">
+                                            <div style="text-align: center;text-decoration:none;" class="Button">Edit Itinerary</div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="Trips" valign="top">
+                                    <table class="LastTrip" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/UA.gif" width="16" height="16" alt="UA - United Airlines" title="UA - United Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">UA 2490</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >9:00am</td>
+                                            <td class="Airport ">MSP</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">DEN</td>
+                                            <td class="Date" >26Oct</td>
+                                            <td class="Time" >10:19am</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TripSeparator" colspan="12">
+                                                <hr>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="CarrierLogo">
+                                                <img src="images/logos/UA.gif" width="16" height="16" alt="UA - United Airlines" title="UA - United Airlines" border="0">
+                                            </td>
+                                            <td class="Carrier">UA 2679</td>
+                                            <td class="Dash">-</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >5:30pm</td>
+                                            <td class="Airport ">DEN</td>
+                                            <td><img class="Arrow" src="/images/itin/arrow.gif" alt="->" border="0"></td>
+                                            <td class="Airport ">MSP</td>
+                                            <td class="Date" >02Nov</td>
+                                            <td class="Time" >8:27pm</td>
+                                            <td class="Stops"></td>
+                                            <td style="width:18px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="Content Full" id="Full3"></div>
+                <div class="Toggle" onclick="toggleItinerary(this,3)">+ view complete summary</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
